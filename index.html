@@ -3,14 +3,14 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="description" content="만 12개월 아기와 어른이 같은 재료로 먹는 1주일 유아식 식단표. 장보기 목록, 레시피, 꼭 지킬 것까지 한 장에.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="어른과 같이 먹는 유아식 1주일 식단표">
+<meta property="og:title" content="어른&amp;아기 같이 먹는 1주일 식단표">
 <meta property="og:description" content="돌 이후 유아식, 아기 밥 먼저 만들고 어른은 간만 더해요. 장보기 2번·레시피 16개.">
 <meta property="og:url" content="https://ybybgo.github.io/toddler-meal-plan/">
 <meta property="og:image" content="https://ybybgo.github.io/toddler-meal-plan/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<title>🥄 youbean.ko 유아식 식단표</title>
+<title>🍚 youbean.ko 유아식 식단표</title>
 
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,6 +32,9 @@
   --bg:#17160F;--ink:#F1EEDF;--muted:#B5AF97;--line:#7A6A1E;--head:#8C7514;--head-ink:#FFF6CC;--label:#2E2915;--cell:#1F1D14;--soft:#25221A;
   --sat:#7FA8FF;--sun:#FF7F78;--plus:#7FA8FF;--prev:#5FD08A;--care:#FFAA5C;color-scheme:dark}
 
+:root{--wm:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='230' height='150'%3E%3Ctext x='115' y='80' text-anchor='middle' transform='rotate(-22 115 75)' font-family='sans-serif' font-size='17' font-weight='700' fill='%233A2E00' fill-opacity='0.10'%3E@youbean.ko%3C/text%3E%3C/svg%3E")}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--wm:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='230' height='150'%3E%3Ctext x='115' y='80' text-anchor='middle' transform='rotate(-22 115 75)' font-family='sans-serif' font-size='17' font-weight='700' fill='%23FFF6CC' fill-opacity='0.10'%3E@youbean.ko%3C/text%3E%3C/svg%3E")}}
+:root[data-theme="dark"]{--wm:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='230' height='150'%3E%3Ctext x='115' y='80' text-anchor='middle' transform='rotate(-22 115 75)' font-family='sans-serif' font-size='17' font-weight='700' fill='%23FFF6CC' fill-opacity='0.10'%3E@youbean.ko%3C/text%3E%3C/svg%3E")}
 *{box-sizing:border-box;border-radius:0}
 body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:14px;line-height:1.5;margin:0;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:14px 40px}
@@ -40,8 +43,15 @@ h1,h2,h3{font-family:var(--f-cute);font-weight:400;margin:0}
 a{color:var(--plus)}
 :focus-visible{outline:2px solid var(--care);outline-offset:1px}
 
-header h1{font-size:26px;line-height:1.2}
+header{position:relative}
+header h1{font-size:21px;line-height:1.25;text-wrap:balance;word-break:keep-all;padding-right:84px}
+header .wk{display:block;margin-top:2px;font-size:12px;font-weight:800;color:var(--care)}
 header p{margin:2px 0 0;color:var(--muted);font-size:13px}
+header .ig{position:absolute;top:2px;right:0;font-size:12px;font-weight:800;color:var(--muted);text-decoration:none}
+.narrow,.wide-wrap{position:relative}
+.narrow::after,.wide-wrap::after{content:"";position:absolute;inset:0;background-image:var(--wm);background-repeat:repeat;pointer-events:none;z-index:1}
+footer .cr{display:block;margin-top:6px;font-weight:800}
+footer .cr a{color:inherit}
 .legend{margin-top:8px;font-size:12.5px;display:flex;flex-wrap:wrap;gap:2px 12px}
 .sym-plus{color:var(--plus);font-weight:800}.sym-prev{color:var(--prev);font-weight:800}.sym-care{color:var(--care);font-weight:800}
 
@@ -120,8 +130,10 @@ footer{margin-top:16px;font-size:12px;color:var(--muted);border-top:2px solid va
 
 <div class="wrap">
 <header>
-  <h1>11월 3주차 식단표</h1>
-  <p>만 12개월 아기 + 어른 둘 · 11/14(토) ~ 11/20(금) · 아기 밥 먼저, 어른은 ◆만 더해요</p>
+  <a class="ig" href="https://www.instagram.com/youbean.ko/" target="_blank" rel="noopener">@youbean.ko</a>
+  <h1>어른&amp;아기 같이 먹는🗓️<br>1주일 식단표</h1>
+  <span class="wk">11월 3주차</span>
+  <p>돌 이후 유아식 &amp; 어른 2인용 일반식 기준 · 아기 밥 먼저, 어른은 ◆만 더해요</p>
   <div class="legend">
     <span><span class="sym-plus">◆</span> 어른만 더해요</span>
     <span><span class="sym-prev">●</span> 전날 남겨 둔 것</span>
@@ -179,7 +191,8 @@ footer{margin-top:16px;font-size:12px;color:var(--muted);border-top:2px solid va
     </ol>
   </details>
 
-  <footer>분량과 아기 몫은 동글마미 집 기준 예시. 처음 먹는 재료는 주말 오전에, 알레르기·질환이 있으면 소아청소년과와 먼저 상의. 확인일 2026-11-10.</footer>
+  <footer>분량과 아기 몫은 동글마미 집 기준 예시. 처음 먹는 재료는 주말 오전에, 알레르기·질환이 있으면 소아청소년과와 먼저 상의. 확인일 2026-11-10.
+    <span class="cr">© 2026 동글마미 <a href="https://www.instagram.com/youbean.ko/" target="_blank" rel="noopener">@youbean.ko</a> · 무단 복제·재배포 금지</span></footer>
 </main>
 </div>
 
