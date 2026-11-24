@@ -243,7 +243,7 @@ const R={
   b:["파스타는 봉지 시간보다 2분 더 삶기","올리브유에 양파·다짐육 볶고 토마토(껍질 벗겨 깍둑) 넣어 10분","아기 몫: 파스타 잘게 잘라 소스에 비비기"],p:"남은 소스에 소금·후추, 그릇에 파마산"}
 };
 
-/* 식단 2026-11-14~20. 접두어 + 어른만(◆) / * 전날 남겨 둔 것(●) / ~ 더 잘게(♣) / ! 안내 / "후식 " */
+/* 식단 (날짜는 아래에서 이번 주로 자동).  접두어 + 어른만(◆) / * 전날 남겨 둔 것(●) / ~ 더 잘게(♣) / ! 안내 / "후식 " */
 const SLOTS=["아침","오전간식","점심","오후간식","저녁"];
 const W=[
  {k:"토",d:"11/14",iso:"2026-11-14",c:"sat",m:[
@@ -306,6 +306,15 @@ const TRIPS=[
 const el=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
 const pad=n=>String(n).padStart(2,'0');
 const now=new Date(), todayISO=now.getFullYear()+'-'+pad(now.getMonth()+1)+'-'+pad(now.getDate());
+/* 매주 자동: 오늘이 속한 토~금 주로 날짜를 다시 매김 */
+const iso=x=>x.getFullYear()+'-'+pad(x.getMonth()+1)+'-'+pad(x.getDate()), md=x=>(x.getMonth()+1)+'/'+x.getDate();
+const sat=new Date(now.getFullYear(),now.getMonth(),now.getDate()-((now.getDay()+1)%7));
+const dayAt=i=>new Date(sat.getFullYear(),sat.getMonth(),sat.getDate()+i);
+W.forEach((d,i)=>{const x=dayAt(i); d.d=md(x); d.iso=iso(x);});
+TRIPS[0].day=iso(dayAt(0)); TRIPS[0].sub=md(dayAt(0))+' · 토~화 메뉴';
+TRIPS[1].day=iso(dayAt(3)); TRIPS[1].sub=md(dayAt(3))+' · 수~금 메뉴';
+{const f=dayAt(6), w=document.querySelector('.wk'); if(w) w.textContent=(f.getMonth()+1)+'월 '+Math.ceil(f.getDate()/7)+'주차';}
+const SHOPKEY='shop-'+iso(sat);
 
 function cell(items){
   const td=el('td');
@@ -334,7 +343,7 @@ document.getElementById('menuNarrow').append(table(W.slice(0,3)), table(W.slice(
 document.getElementById('menuWide').append(table(W));
 
 /* 오늘 살 것: 오늘이 장보는 날이면 '오늘 사요', 아니면 다음 장보기를 강조 */
-let saved={}; try{saved=JSON.parse(localStorage.getItem('shop-1114')||'{}')}catch(e){}
+let saved={}; try{saved=JSON.parse(localStorage.getItem(SHOPKEY)||'{}')}catch(e){}
 const next=TRIPS.find(t=>t.day>=todayISO);
 const note=document.getElementById('shopNote');
 note.textContent = !next ? '이번 주 장보기 끝' : next.day===todayISO ? '오늘 사요' : '다음 장보기 · '+next.sub.split(' · ')[0];
@@ -349,7 +358,7 @@ TRIPS.forEach(t=>{
     items.forEach((x,i)=>{
       const k=t.id+':'+x, li=el('li'), lb=el('label'), cb=el('input');
       cb.type='checkbox'; cb.checked=!!saved[k];
-      cb.onchange=()=>{saved[k]=cb.checked; try{localStorage.setItem('shop-1114',JSON.stringify(saved))}catch(e){}};
+      cb.onchange=()=>{saved[k]=cb.checked; try{localStorage.setItem(SHOPKEY,JSON.stringify(saved))}catch(e){}};
       lb.append(cb, el('span',null,x)); li.append(lb); ul.append(li);
     });
   });
