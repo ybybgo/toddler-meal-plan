@@ -181,7 +181,32 @@ footer{margin-top:16px;font-size:12px;color:var(--muted);border-top:2px solid va
     <div class="recipes" id="recipeList"></div>
   </section>
 
-  <details class="src">
+  <!--cp:start-->
+<style>
+.cpx{margin:28px 0;padding:16px 0;border-top:4px solid #111;color:inherit;text-align:left}
+.cpx h2{font-size:19px;margin:0 0 6px;padding:0;border:0;background:none;color:inherit}
+.cpx .cpn{font-size:12px;line-height:1.5;margin:0 0 12px;color:inherit}
+.cpx .cpg{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px}
+.cpx a.cpi{display:flex;flex-direction:column;background:#fff;color:#111;border:2px solid #111;text-decoration:none}
+.cpx a.cpi img{display:block;width:100%;aspect-ratio:1;object-fit:contain;background:#fff}
+.cpx a.cpi span{flex:1;padding:8px;font-size:13px;line-height:1.4;word-break:keep-all}
+.cpx a.cpi b{display:block;background:#111;color:#fff;font-size:13px;text-align:center;padding:8px}
+.cpend{font-size:12px;line-height:1.5;text-align:center;margin:14px 0}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .cpx h2,:root:not([data-theme="light"]) .cpx .cpn{color:inherit}}
+@media print{.cpx,.cpend{display:none}}
+</style>
+<section class="cpx chrome">
+<h2>직접 써본 상품</h2>
+<p class="cpn">네이버 쇼핑 커넥트·쿠팡 파트너스 활동의 일환으로, 판매 시 일정액의 수수료를 받아요.</p>
+<div class="cpg">
+<a class="cpi" href="https://link.coupang.com/a/iZ22fwRFtc" target="_blank" rel="sponsored nofollow noopener" referrerpolicy="unsafe-url"><img src="https://ads-partners.coupang.com/image1/LXDJMbAnZMTW2qBbLQMCh7awlN_8WxP0csOjVVDK1vffDwK111_bnUWaaQIY8mfhKkFRU4ESHLFxft0MCOZlTHr6VlBOyDX16wmCcypo3SeEesawbXsN5JxWFp_1puYZle-mhQ9GdEsIJKxFA7-FHx_ecgOjUOK4qn8mdWRxCnIRxoeujLF7roPxTva3FxPUnuwIFSU42oM17ipr9GO9ZbDIkiR_iU-TBqDqE43M-DW3WM0M1vXNIbY6LzqZkYXOzZB8VKpYLbMzO9ZH16SKIlFQqLyQ2s0NEQ9_gusslLyH2WpvONQ-DMLdtFaWkAOOaG7CB431cCPx7_kgmO6hl6ZrMUT_hQnar-yzyYmLrzuYQixhEbmf3RHNhyCp5nnVPWJrv_CqvFSpmGKK1kHXo4Ipo0i4vVs8UQ2y9JL6aAKsOAg6ZQ2bB3Z1PbrWSysAg45RgZsLar8oWENDCJe4v6TA4K1ThSs8xiqJ21Hj7cSqrIXy555sdZOQ0VBJKdlG1pLKuFimKvmbcZEmNKFY6Byd5DoKrpUL6EZqjCLR_AfzABiLJulznavlga7PEbpjiI7wtiw=" alt="무항생제 한우 목심 샤브샤브용 고기" loading="lazy"><span>무항생제 한우 목심 샤브샤브용 고기</span><b>쿠팡에서 보기</b></a>
+<a class="cpi" href="https://link.coupang.com/a/iZ27ak700q" target="_blank" rel="sponsored nofollow noopener" referrerpolicy="unsafe-url"><img src="https://ads-partners.coupang.com/image1/Mv1MGmLVVsXM4VFNMq_EjhRDe4ax6VQNbX-ottPR9KexibQzO9sYO2kU9DX5qMUBCBH9CS2LyTmFd6vVUnofilcQ9BiT73a1TVLB_6_zmIOTzElogdtX1z2DPKr7Of3lP4pvSu3ldy41eogYh6-6a_AJrsqVfrNzwUHq8fmJXCdliVUZeBSe5QdiSzTYEfhhAPb7O142R7L6sre2LQKvb2_MoE3mbsNEvnn8WKdq1cHheMSf_ksfY9vrH7wrrwL9VctBnNhdKUCcodbFRD8Z9OnJCtevLyehGbfvAQuwUNirbJY-j2BSYpNGFgVaHUWa6cOFrM1YmzuRrhEFcbvSp2Glf9VFIW4yEIeWLT6a5AbG10JeXWzNTeMUUdsQazBF9WIhK2B70H_Cd7tQ39aVbW0wEjJJgaiIeXtX4MNn_D71e5--98SpCcen_B8voAJSkJn7r7Ij9sWzJY9LVeHWSCRSDMyaoGt6g_cMcxumV4umWADKnMw2eK21UfZbmQv9dF80N3MCAkFlKrLXDqIj_DtlBUFwgxZgfQXylWD9WtLnZ_6ZM-pE3Dg3uSgJ3yLLCwV_bAQ2nEbSa7kvjFV4ZcSAK00I6iNCyAsG7w==" alt="무항생제 백색대란 30구" loading="lazy"><span>무항생제 백색대란 30구</span><b>쿠팡에서 보기</b></a>
+<a class="cpi" href="https://link.coupang.com/a/iZ3k8fk6cC" target="_blank" rel="sponsored nofollow noopener" referrerpolicy="unsafe-url"><span>신동진 특등급 백미 5kg</span><b>쿠팡에서 보기</b></a>
+</div>
+<p class="cpend">네이버 쇼핑 커넥트·쿠팡 파트너스 활동의 일환으로, 판매 시 일정액의 수수료를 받아요.</p>
+</section>
+<!--cp:end-->
+<details class="src">
     <summary>출처</summary>
     <ol>
       <li>보건복지부·한국영양학회 「2025 한국인 영양소 섭취기준」 — 1~2세 나트륨 충분섭취량 630mg, 철 6mg, 당류. <a href="https://health.seoulmc.or.kr/uploadFiles/2025_%ED%95%9C%EA%B5%AD%EC%9D%B8%EC%98%81%EC%96%91%EC%86%8C%EC%84%AD%EC%B7%A8%EA%B8%B0%EC%A4%80_%ED%99%9C%EC%9A%A9.pdf" target="_blank" rel="noopener">요약본 PDF</a></li>
